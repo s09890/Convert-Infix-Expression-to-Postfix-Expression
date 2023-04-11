@@ -7,7 +7,6 @@
 #include <string.h>
 #include "list.h"
 
-#ifdef TEST_READLIST
 bool readList(char * filename, List * arithlist)
 {
   if (arithlist == NULL)
@@ -40,10 +39,7 @@ bool readList(char * filename, List * arithlist)
   fclose(file);
   return true;
 }
-#endif
 
-
-#ifdef TEST_DELETELIST
 void deleteList(List * list)
 {
   if (list == NULL)
@@ -61,9 +57,7 @@ void deleteList(List * list)
   list->tail = NULL;
   free(list);
 }
-#endif
 
-#ifdef TEST_ADDNODE
 void addNode(List * arithlist, char * word)
 {
   if (arithlist == NULL)
@@ -98,9 +92,7 @@ void addNode(List * arithlist, char * word)
     newNode->word[len + 1] = '\0';
   }
 }
-#endif
 
-#ifdef TEST_DELETENODE
 bool deleteNode(List * list, ListNode * node)
 {
   if (list == NULL || node == NULL)
@@ -131,6 +123,4 @@ bool deleteNode(List * list, ListNode * node)
 
   return true;
 }
-
-#endif
 
